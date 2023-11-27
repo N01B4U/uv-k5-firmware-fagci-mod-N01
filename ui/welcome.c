@@ -44,9 +44,9 @@ void UI_DisplayWelcome(void) {
       EEPROM_ReadBuffer(0x0EB0, WelcomeString0, 16);
       EEPROM_ReadBuffer(0x0EC0, WelcomeString1, 16);
     }
-    UI_PrintString(WelcomeString0, 0, 127, 1, 10, true);
-    UI_PrintString(WelcomeString1, 0, 127, 3, 10, true);
-    UI_PrintStringSmall(Version, 0, 127, 5);
+    /*UI_PrintString(WelcomeString0, 0, 127, 1, 10, true);
+    UI_PrintString(WelcomeString1, 0, 127, 3, 10, true);*/
+    UI_PrintString(Version, 0, 127, 3, 10, true);
     UI_PrintStringSmallest(__DATE__ " " __TIME__, 24, 50, false, true);
 
     ST7565_BlitStatusLine();

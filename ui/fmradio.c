@@ -15,15 +15,16 @@
  */
 
 #include <string.h>
-#include "../app/fm.h"
-#include "../driver/st7565.h"
-#include "../external/printf/printf.h"
-#include "../misc.h"
-#include "../settings.h"
-#include "fmradio.h"
-#include "helper.h"
-#include "inputbox.h"
-#include "ui.h"
+#include "app/fm.h"
+#include "driver/st7565.h"
+#include "external/printf/printf.h"
+#include "misc.h"
+#include "settings.h"
+#include "ui/fmradio.h"
+#include "ui/helper.h"
+#include "ui/inputbox.h"
+#include "ui/ui.h"
+
 
 void UI_DisplayFM(void)
 {
@@ -33,7 +34,7 @@ void UI_DisplayFM(void)
 	memset(gFrameBuffer, 0, sizeof(gFrameBuffer));
 
 	memset(String, 0, sizeof(String));
-	strcpy(String, "FM");
+	strcpy(String, "BC-FM BAND");
 
 	UI_PrintString(String, 0, 127, 0, 12, true);
 	memset(String, 0, sizeof(String));
@@ -55,7 +56,7 @@ void UI_DisplayFM(void)
 					strcpy(String, "VFO");
 				}
 			} else {
-				sprintf(String, "MR(CH%02d)", gEeprom.FM_SelectedChannel + 1);
+				sprintf(String, "(MEM-%02d)MHz", gEeprom.FM_SelectedChannel + 1);
 			}
 		} else {
 			if (!gFM_AutoScan) {
@@ -74,17 +75,20 @@ void UI_DisplayFM(void)
 	} else if (!gAskToDelete) {
 		if (gInputBoxIndex == 0) {
 			NUMBER_ToDigits(gEeprom.FM_FrequencyPlaying * 10000, String);
-			UI_DisplayFrequency(String, 23, 4, false, true);
+			UI_DisplayFrequency(String, 20, 4, false, true);
+			UI_PrintStringSmallest("Broadcast FM Radio", 30, 50, false, true);
 		} else {
 			UI_DisplayFrequency(gInputBox, 23, 4, true, false);
 		}
 		ST7565_BlitFullScreen();
 		return;
 	} else {
-		sprintf(String, "CH-%02d", gEeprom.FM_SelectedChannel + 1);
+		sprintf(String, "(CH-%02d)", gEeprom.FM_SelectedChannel + 1);
 	}
 
 	UI_PrintString(String, 0, 127, 4, 10, true);
+	
+	
 	ST7565_BlitFullScreen();
 }
 

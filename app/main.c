@@ -270,7 +270,7 @@ static void MAIN_Key_MENU(bool bKeyPressed, bool bKeyHeld) {
         gInputBoxIndex = 0;
         gRequestDisplayScreen = DISPLAY_MAIN;
       } else {
-        gRequestDisplayScreen = DISPLAY_APP_MENU;
+        gRequestDisplayScreen = DISPLAY_MENU;
       }
       return;
     }
@@ -280,7 +280,7 @@ static void MAIN_Key_MENU(bool bKeyPressed, bool bKeyHeld) {
     // LONG PRESS
     if (!gInputBoxIndex) {
       gFlagRefreshSetting = true;
-      gRequestDisplayScreen = DISPLAY_MENU;
+      gRequestDisplayScreen = DISPLAY_APP_MENU;
     }
 
     return;

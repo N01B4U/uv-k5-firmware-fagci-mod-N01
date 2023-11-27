@@ -228,11 +228,11 @@ static void displayVfo(uint8_t vfoNum) {
         memset(String, 0, sizeof(String));
         memmove(String, vfoInfo.Name, 10);
       }
-      UI_PrintStringSmallBold(String, 31 + 8, 0, Line);
+      UI_PrintStringSmallBold(String, 26 + 8, 0, Line);
 
       // show the channel frequency below the channel number/name
-      sprintf(String, "%u.%05u", frequency / 100000, frequency % 100000);
-      UI_PrintStringSmall(String, 31 + 8, 0, Line + 1);
+      sprintf(String, "%u.%05u MHz", frequency / 100000, frequency % 100000);
+      UI_PrintStringSmallBold(String, 26 + 8, 0, Line + 1);
     } else {
       UI_PrintString(vfoInfo.Name, 31, 112, vfoNum * 4, 8, true);
     }

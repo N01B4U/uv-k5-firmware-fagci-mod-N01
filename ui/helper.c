@@ -136,6 +136,7 @@ void UI_DisplayFrequency(const char *pDigits, uint8_t X, uint8_t Y,
   uint8_t *pFb1 = pFb0 + 128;
   bool bCanDisplay = false;
   uint8_t i = 0;
+  
 
   // MHz
   while (i < 4) {
@@ -239,16 +240,16 @@ void UI_ClearAppScreen() {
 
 void UI_DrawScanListFlag(uint8_t *pLine, uint8_t attrs) {
   if (attrs & MR_CH_SCANLIST1) {
-    pLine[117] ^= 0b100010;
+    pLine[117] ^= 0b111110;
     pLine[118] ^= 0b111110;
-    pLine[119] ^= 0b100010;
+    pLine[119] ^= 0b111110;
   }
   if (attrs & MR_CH_SCANLIST2) {
-    pLine[122] ^= 0b100010;
+    pLine[122] ^= 0b111110;
     pLine[123] ^= 0b111110;
-    pLine[124] ^= 0b100010;
+    pLine[124] ^= 0b111110;
     pLine[125] ^= 0b111110;
-    pLine[126] ^= 0b100010;
+    pLine[126] ^= 0b111110;
   }
 }
 

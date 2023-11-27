@@ -27,7 +27,7 @@ void UI_DisplayRSSIBar(int16_t rssi) {
   char String[16];
 
   const uint8_t LINE = 3;
-  const uint8_t BAR_LEFT_MARGIN = 24;
+  const uint8_t BAR_LEFT_MARGIN = 36;
 
   int dBm = Rssi2DBm(rssi);
   uint8_t s = DBm2S(dBm);
@@ -41,8 +41,8 @@ void UI_DisplayRSSIBar(int16_t rssi) {
     line[i + 1] = sv > 9 ? 0b00100010 : 0b00111110;
   }
 
-  sprintf(String, "%d", dBm);
-  UI_PrintStringSmallest(String, 110, 25, false, true);
+  sprintf(String, "%ddbm", dBm);
+  UI_PrintStringSmallest(String, 104, 25, false, true);
   if (s < 10) {
     sprintf(String, "S%u", s);
   } else {

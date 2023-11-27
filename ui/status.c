@@ -58,10 +58,10 @@ void UI_DisplayStatus(void) {
   sprintf(String, "%s %s %s %s %s %s %s",
           isPowerSave ? "S" : " ", //
           isKeyLock ? "L" : " ",   //
-          isFPressed ? "F" : " ",  //
-          isVox ? "VOX" : "   ",   //
+          isFPressed ? "Fx" : " ",  //
+          isVox ? "VX" : "   ",   //
           isWx ? "WX" : "  ",      //
-          isDw ? "DW" : "  ",      //
+          isDw ? "DRX" : "  ",      //
           isFm ? "FM" : "  "       //
   );
   UI_PrintStringSmallest(String, 0, 0, true, true);
