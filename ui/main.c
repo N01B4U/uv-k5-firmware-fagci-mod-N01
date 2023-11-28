@@ -277,11 +277,13 @@ void UI_DisplayMain(void) {
   }
 
   if (gScreenToDisplay == DISPLAY_MAIN && !gKeypadLocked) {
-    if (gCurrentFunction == FUNCTION_RECEIVE ||
+    /*if (gCurrentFunction == FUNCTION_RECEIVE ||
         gCurrentFunction == FUNCTION_MONITOR ||
-        gCurrentFunction == FUNCTION_INCOMING) {
+        gCurrentFunction == FUNCTION_INCOMING)*/ {
       UI_DisplayRSSIBar(BK4819_GetRSSI());
     }
+	
+	
   }
 
   ST7565_BlitFullScreen();

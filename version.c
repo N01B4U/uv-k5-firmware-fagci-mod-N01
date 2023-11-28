@@ -1,3 +1,3 @@
-const char Version[] = "OSFW-FAGCI-N01";
+const char Version[] = "UV-K5X";
 const char UART_Version[45] =
     "OSFW-FAGCI-N01";
