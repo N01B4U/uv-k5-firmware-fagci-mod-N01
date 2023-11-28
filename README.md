@@ -1,4 +1,4 @@
-# This repo contains mostly costmetic changes to the Fagci mod of OEFW. All credits to the respective devs for their hard work that empowers us all. Possibly some new additions and modifications in the future but for now, the N01 mod is purly cosmetic to suit my tastes.
+# This repo contains mostly costmetic changes to the Fagci mod of OEFW. All credits to the respective devs for their hard work that empowers us all. Possibly some new additions and modifications in the future but for now, the repo is purly cosmetic changes to suit my tastes. Absolutely no guarantees of functionality and no requests for edits will be taken.
 
 
 # Open reimplementation of the Quan Sheng UV K5 v2.1.27 firmware
